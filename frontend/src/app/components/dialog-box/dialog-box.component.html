@@ -1,0 +1,37 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="example-form">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Age</mat-label>
+      <input matInput formControlName="age" />
+    </mat-form-field>
+    <div class="fact-list">
+    <mat-list formArrayName="facts">
+      <div *ngFor="let factControl of facts.controls; let i = index" class="fact-row">
+        <mat-form-field class="fact-field">
+            <mat-label>fact {{ i + 1 }}</mat-label>
+          <input matInput [formControlName]="i" />
+        </mat-form-field>
+        <mat-icon *ngIf="i !== 0" (click)="removeFact(i)">remove</mat-icon>
+        <mat-icon *ngIf="i === 0" (click)="addFact()">add</mat-icon>
+      </div>
+    </mat-list>
+    </div>
+    <div class="owner-list">
+    <mat-list formArrayName="owners">
+      <div *ngFor="let ownerControl of owners.controls; let i = index" class="owner-row">
+        <mat-form-field class="owner-field">
+          <mat-label>owner {{ i + 1 }}</mat-label>
+          <input matInput [formControlName]="i" />
+        </mat-form-field>
+        <mat-icon *ngIf="i !== 0" (click)="removeOwner(i)">remove</mat-icon>
+        <mat-icon *ngIf="i === 0" (click)="addOwners()">add</mat-icon>
+      </div>
+    </mat-list>
+  </div>
+    <button type="submit" mat-stroked-button>Ok</button>
+    <button type="button" mat-stroked-button (click)="onNoClick()">Cancel</button>
+  </form>

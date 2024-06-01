@@ -1,0 +1,39 @@
+<div class="example-card-container">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{cat.name}}</mat-card-title>
+      <mat-card-subtitle>AGE: {{cat.age}}</mat-card-subtitle>
+    </mat-card-header> <mat-card-content>
+      <div class="example-accordion-container">
+        <mat-accordion class="example-accordion">
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Facts
+              </mat-panel-title>
+              <mat-panel-description>This is facts about {{cat.name}} </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngFor="let fact of cat.facts">
+              <p>{{fact.fact}}</p>
+            </div>
+          </mat-expansion-panel>
+          <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Owners
+              </mat-panel-title>
+              <mat-panel-description> These are the cat owners </mat-panel-description>
+            </mat-expansion-panel-header>
+            <div *ngFor="let owner of cat.owners">
+              <p>{{owner.name}}</p>
+            </div>
+          </mat-expansion-panel>
+        </mat-accordion>
+      </div>
+    </mat-card-content>
+    <mat-card-actions class="example-card-actions">
+      <div class="example-button-row">
+        <button mat-button (click)="openDialog()">UPDATE</button>
+        <button mat-button (click)="confirmDialog()">DELETE</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

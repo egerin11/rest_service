@@ -1,0 +1,42 @@
+.example-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: 0 auto;
+
+  }
+  
+  .mat-form-field {
+    margin-bottom: 20px;
+    width: 100%;
+    
+  }
+  .fact-list,
+.owner-list {
+  display: block;
+  /* height: 150px; Set a fixed height */
+  overflow-y: auto; /* Add a scrollbar if the content exceeds the height */
+}
+/* 
+.fact-list mat-list-item,
+.owner-list mat-list-item {
+  height: 30px; 
+} */
+
+  .fact-row,
+  .owner-row {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 10px; */
+  }
+  
+  .fact-field,
+  .owner-field {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  
+  .fact-row mat-icon,
+  .owner-row mat-icon {
+    cursor: pointer;
+  }

@@ -1,0 +1,56 @@
+.example-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.example-accordion{
+    margin-bottom: 10px;
+}
+.example-accordion-container {
+    width: 100%;
+    margin-top: 10px;
+}
+.mat-mdc-card-subtitle{
+    color:#000000;
+    font-family: var(--mat-card-title-text-font);
+}
+
+.mat-expansion-panel {
+    background-color: #969696;
+}
+.mat-mdc-button.mat-unthemed {
+    --mdc-text-button-label-text-color: #000000; 
+  }
+  .mdc-button{
+    background:none;
+    transition: transform 0.35s;
+
+  }
+  .mdc-button:hover{
+    background-color: #a5a5a5;
+    transform: scale(1.05);
+
+  }
+
+  .example-card-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: auto;
+}
+
+.example-card {
+    width: 500px;
+    height: 600px; 
+    padding: 20px;
+    margin: 10px auto 0;
+    background-color: #cccccc;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+@media (max-width: 600px) {
+    .example-card {
+        width: 100%;
+    }
+}

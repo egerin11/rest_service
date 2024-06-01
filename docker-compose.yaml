@@ -1,0 +1,29 @@
+volumes:
+  pg_data:
+
+services:
+  backend:
+    container_name: laba
+    restart: always
+    build:
+      context: ./laba
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - cats_db
+    environment:
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://cats_db:5432/java'
+
+  cats_db:
+    image: postgres
+    container_name: cats_db_java
+    restart: always
+    environment:
+      - POSTGRES_DB=java
+      - POSTGRES_USER=cats
+      - POSTGRES_PASSWORD=egerin
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
